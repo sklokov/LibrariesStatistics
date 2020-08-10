@@ -5,6 +5,9 @@
   min-height: 280px;
   display: flex;
   justify-content: center;
+  width: 100%;
+  min-width: 600px;
+  text-align: -webkit-center;
 }
 #components-layout-demo-top .logo {
   width: 120px;
@@ -13,3 +16,5 @@
   margin: 16px 24px 16px 0;
   float: left;
 }
+
+

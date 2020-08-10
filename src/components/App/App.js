@@ -11,7 +11,7 @@ export default function App() {
 
   return (
     <Layout className="layout">
-      <Header>
+      <Header style={{ minWidth: "650px", width: "100%"}}>
         <AppHeader/>
       </Header>
       <Content style={{padding: '0 50px'}}>
@@ -24,7 +24,7 @@ export default function App() {
           </Switch>
         </div>
       </Content>
-      <Footer style={{textAlign: 'center'}}>Sergey Klokov Test 2020</Footer>
+      <Footer style={{textAlign: 'center', minWidth: "650px", width: "100%"}}>Sergey Klokov Test 2020</Footer>
     </Layout>
   )
 };

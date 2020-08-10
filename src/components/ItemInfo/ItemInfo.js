@@ -14,7 +14,7 @@ function ItemInfo() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("opendata/7705851331-stat_library/data-2016-11-10T00-00-00-structure-2016-09-12T00-00-00.json")
+      .get("https://cors-anywhere.herokuapp.com/https://data.gov.ru/opendata/7705851331-statlibrary/data-20161110T1744.json")
       .then(res => {
         setData(res.data);
         setLoading(false);
@@ -38,8 +38,8 @@ function ItemInfo() {
   return (
     <div>
       {filteredData.map((data, i) => (
-        <div className="ItemAdditionalInfo" key={i}>
-          <Descriptions title={data.formname} layout="vertical" bordered>
+        <div key={i}>
+          <Descriptions style={{ minWidth: "500px", width: "50%"}} title={data.formname} layout="vertical" bordered>
             <Descriptions.Item label="Регион">{data.territory}</Descriptions.Item>
             <Descriptions.Item label="Количество библиотек">{data.libraries}</Descriptions.Item>
             <Descriptions.Item label="Количество подписчиков">{data.subscribers}</Descriptions.Item>
