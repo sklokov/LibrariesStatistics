@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import '../ItemInfo/ItemInfo.css';
 import {NavLink, useParams} from "react-router-dom";
 import axios from "axios";
-import {Button, Descriptions, Badge} from "antd";
+import {Button, Descriptions} from "antd";
 
 
 function ItemInfo() {
@@ -36,19 +36,20 @@ function ItemInfo() {
   }
 
   return (
-    <div>
+    <div className="ItemInfo">
       {filteredData.map((data, i) => (
         <div key={i}>
-          <Descriptions style={{ minWidth: "500px", width: "50%"}} title={data.formname} layout="vertical" bordered>
+          <Descriptions
+            title={data.formname}
+            bordered
+            column={{xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1}}
+          >
             <Descriptions.Item label="Регион">{data.territory}</Descriptions.Item>
             <Descriptions.Item label="Количество библиотек">{data.libraries}</Descriptions.Item>
             <Descriptions.Item label="Количество подписчиков">{data.subscribers}</Descriptions.Item>
             <Descriptions.Item label="Количество сотрудников">{data.employees}</Descriptions.Item>
             <Descriptions.Item label="Административная принадлежность" span={2}>
               {data.fullname}
-            </Descriptions.Item>
-            <Descriptions.Item label="Статус" span={3}>
-              <Badge status="processing" text="Действующая"/>
             </Descriptions.Item>
             <Descriptions.Item label="Средства поступившие из бюджета">{data.funds_budget} тыс. руб.</Descriptions.Item>
             <Descriptions.Item label="Отремонтировано зданий">{data.buildings_repair}</Descriptions.Item>
@@ -58,13 +59,11 @@ function ItemInfo() {
             </Descriptions.Item>
           </Descriptions>
           <NavLink to="/">
-            <Button className="BtnAddInfo" type="primary" size="default">Назад</Button>
+            <Button id="BtnAddInfo" type="primary" size="default">Назад</Button>
           </NavLink>
         </div>
       ))}
     </div>
-
-
   )
 }
 

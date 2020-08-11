@@ -1,4 +1,8 @@
-.BtnAddInfo {
+#BtnAddInfo {
   margin-top: 2em;
 }
 
+.ItemInfo {
+  text-align: center;
+  min-width: 310px;
+}

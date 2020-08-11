@@ -10,21 +10,25 @@ export default function App() {
   const {Header, Content, Footer} = Layout;
 
   return (
-    <Layout className="layout">
-      <Header style={{ minWidth: "650px", width: "100%"}}>
-        <AppHeader/>
-      </Header>
-      <Content style={{padding: '0 50px'}}>
-        <div className="site-layout-content">
-          <Switch>
-            <Route exact path='/'
-                   render={() => <MainPage/>}/>
-            <Route path='/region-info/:order'
-                   render={() => <ItemInfo />}/>
-          </Switch>
-        </div>
-      </Content>
-      <Footer style={{textAlign: 'center', minWidth: "650px", width: "100%"}}>Sergey Klokov Test 2020</Footer>
+    <Layout style={{ minWidth: 330}}>
+      <Layout>
+        <Header className="site-layout-sub-header-background" id="header" style={{ padding: 0}}>
+             <AppHeader/>
+             </Header>
+        <Content style={{ margin: '24px 16px 0' }}>
+          <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+            <Switch>
+              <Route exact path='/'
+                     render={() => <MainPage/>}/>
+              <Route path='/region-info/:order'
+                     render={() => <ItemInfo />}/>
+            </Switch>
+          </div>
+
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>Sergey Klokov Test 2020</Footer>
+      </Layout>
     </Layout>
   )
 };
+

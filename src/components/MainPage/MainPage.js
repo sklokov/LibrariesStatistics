@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Layout, Menu, Radio, Select} from 'antd';
+import {Radio} from 'antd';
 import '../MainPage/MainPage.css';
 import axios from "axios";
 import Item from "../Item/Item";
 
 
 function MainPage() {
-  const { Header, Content, Footer, Sider  } = Layout;
-  const { SubMenu } = Menu;
-  const { Option, OptGroup } = Select;
-
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -60,14 +56,13 @@ function MainPage() {
 
   return (
     <div className="MainPageContainer">
-
       <div className="RadioButtons">
         <input
           type="text"
           placeholder="Поиск по региону"
           onChange={e => setSearch(e.target.value)}
         />
-        <p><b>Сортировать</b></p>
+        <p className="SortTitle"><b>Сортировать</b></p>
         <Radio.Group className="RadioGroup" name="radiogroup">
           <Radio
             value="option1"
