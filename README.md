@@ -1,4 +1,4 @@
-# LibrariesStatistics
+# Libraries Statistics
 LibrariesSearch on React Hooks
 
 В SPA реализованны 2 страницы на основе API : 
